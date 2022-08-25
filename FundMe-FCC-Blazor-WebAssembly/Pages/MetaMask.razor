@@ -1,0 +1,28 @@
+﻿@using FundMeFrontEnd.Pages
+@page "/MM"
+@page "/"
+@inherits MetaMaskBase
+
+<h3>FundMe App</h3>
+
+<hr />
+
+<button id="connectButton" @onclick="@connect">Connect to MetaMask</button>
+
+<p @ref="isMetaMaskConnected"></p> 
+<p>@userAddress</p>
+
+<hr />
+
+<button id="balanceButton" @onclick="@balance">Balance</button>
+<p>The Ether amount in the contract is: "@etherBalance"</p>
+
+<hr />
+
+<button id="withdrawButton" @onclick="@withdraw">Withdraw</button>
+
+<hr />
+
+<label  for="fund">Ether Amount</label>
+<input  id="etherAmountID" @ref="etherAmount" placeholder="100"/>
+<button id="fundButton" @onclick="@fund">Fund</button>
